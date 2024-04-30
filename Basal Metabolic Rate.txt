@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    float weight, height, age, bmr;
+    int gender; // 0 for male, 1 for female
+
+    printf("Enter your weight in kilograms: ");
+    scanf("%f", &weight);
+
+    printf("Enter your height in centimeters: ");
+    scanf("%f", &height);
+
+    printf("Enter your age in years: ");
+    scanf("%f", &age);
+
+    printf("Enter your gender (0 for male, 1 for female): ");
+    scanf("%d", &gender);
+
+    if (gender == 0) {
+        // For males
+        bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+    } else {
+        // For females
+        bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+    }
+
+    printf("Your Basal Metabolic Rate (BMR) is: %.2f calories per day\n", bmr);
+
+    return 0;
+}
